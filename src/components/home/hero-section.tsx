@@ -6,8 +6,9 @@ export function HeroSection() {
 
   return (
     <div className="relative bg-black overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        <div className="relative z-10 pb-12 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+      <div className="max-w-7xl mx-auto lg:flex lg:items-center">
+        {/* Text Content */}
+        <div className="relative z-10 pb-12 sm:pb-16 md:pb-20 lg:w-1/2 lg:pb-28 xl:pb-32">
           <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
             <div className="sm:text-center lg:text-left">
               <h1 className="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
@@ -41,16 +42,16 @@ export function HeroSection() {
             </div>
           </main>
         </div>
-      </div>
 
-      {/* Right-side Image */}
-      <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-        <img
-          className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full opacity-80"
-          src="https://t3.ftcdn.net/jpg/01/93/54/54/360_F_193545415_6pzIxsRxtPenzgxfVqtuXCG2BE8vitif.jpg"
-          alt="Blockchain technology visualization"
-          loading="lazy"
-        />
+        {/* Right-side Image */}
+        <div className="lg:w-1/2">
+          <img
+            className="w-full h-auto sm:h-72 md:h-96 lg:h-full object-cover opacity-80"
+            src="https://t3.ftcdn.net/jpg/01/93/54/54/360_F_193545415_6pzIxsRxtPenzgxfVqtuXCG2BE8vitif.jpg"
+            alt="Blockchain technology visualization"
+            loading="lazy"
+          />
+        </div>
       </div>
 
       {/* Modal (Popup) for Learn More */}
