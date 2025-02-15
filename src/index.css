@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Inter var", system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: linear-gradient(135deg, #0d1117, #010409);
+    color: #e6edf3;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    transition: all 0.5s ease-in-out;
+  }
+
+  h1, h2, h3 {
+    font-weight: 700;
+    color: #58a6ff;
+    text-shadow: 0 0 10px rgba(88, 166, 255, 0.6);
+    transition: all 0.3s ease-in-out;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #8b949e;
+    transition: all 0.3s ease-in-out;
+  }
+
+  a {
+    color: #ffa657;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+  }
+
+  a:hover {
+    color: #ff7b72;
+    transform: translateY(-2px);
+    text-shadow: 0 0 8px rgba(255, 123, 114, 0.6);
+  }
+
+  /* Glassmorphism Effect */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .glass-card:hover {
+    backdrop-filter: blur(15px);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+  }
+
+  /* Neon Glow Effect */
+  .glow-effect {
+    box-shadow: 0 0 15px rgba(88, 166, 255, 0.6);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .glow-effect:hover {
+    box-shadow: 0 0 25px rgba(88, 166, 255, 0.8);
+  }
+
+  /* Luxury Gradient Border */
+  .luxury-border {
+    border-radius: 10px;
+    padding: 5px;
+    background: linear-gradient(45deg, #ff7b72, #58a6ff, #ffa657);
+    background-size: 200% 200%;
+    animation: borderGradientShift 4s infinite;
+  }
+
+  @keyframes borderGradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* 3D Button Effect */
+  .button-3d {
+    background: linear-gradient(135deg, #58a6ff, #ff7b72);
+    padding: 12px 24px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(255, 123, 114, 0.4);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .button-3d:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255, 123, 114, 0.6);
+  }
+
+  .button-3d:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 10px rgba(255, 123, 114, 0.3);
+  }
+
+  /* Holographic Gradient Text */
+  .holo-text {
+    background: linear-gradient(90deg, #58a6ff, #ff7b72, #ffa657);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: holoShift 3s infinite alternate;
+  }
+
+  @keyframes holoShift {
+    from { background-position: 0% 50%; }
+    to { background-position: 100% 50%; }
+  }
+
+  /* Cyberpunk Glow Section */
+  .cyber-section {
+    border: 2px solid rgba(88, 166, 255, 0.5);
+    box-shadow: 0 0 20px rgba(88, 166, 255, 0.3);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .cyber-section:hover {
+    box-shadow: 0 0 30px rgba(88, 166, 255, 0.6);
+  }
+
+  /* Floating Animation */
+  .floating {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+  }
+
+  /* Mobile Slide-in */
+  @media (max-width: 768px) {
+    .mobile-slide-in {
+      animation: slideLeft 0.5s ease-in-out;
+    }
+
+    @keyframes slideLeft {
+      from { transform: translateX(100%); }
+      to { transform: translateX(0); }
+    }
+    .star {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: radial-gradient(circle, #ffa657, transparent);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: star-animation 0.5s linear;
+    }
+    
+    @keyframes star-animation {
+      0% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(2);
+      }
+    }
+    
+  }
+}
