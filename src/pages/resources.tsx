@@ -98,65 +98,60 @@ export function ResourcesPage() {
   ];
 
   return (
-    <div className="bg-gray-900 min-h-screen text-[#00FFFF]">
-      <div className="container mx-auto px-4 py-12">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold text-[#00FFFF] mb-8 text-center">
-            🚀 Learning Resources
-          </h1>
+    <div className="bg-gray-900 min-h-screen text-[#00FFFF] px-6 py-12 flex flex-col items-center">
+      <div className="max-w-4xl w-full">
+        <h1 className="text-4xl font-bold text-center mb-8">🚀 Learning Resources</h1>
+        <p className="text-lg text-[#00DDFF] mb-10 text-center">
+          Explore our curated blockchain resources, tutorials, and documentation to accelerate your learning.
+        </p>
 
-          <p className="text-lg text-[#00DDFF] mb-12 text-center">
-            Explore our curated blockchain resources, tutorials, and documentation to accelerate your learning.
-          </p>
+        <div className="space-y-12">
+          {sections.map((section, index) => (
+            <div key={index}>
+              <h2 className="text-2xl font-bold flex items-center mb-6">
+                <section.icon className="mr-3 h-7 w-7 text-[#00DDFF]" />
+                {section.title}
+              </h2>
 
-          <div className="space-y-12">
-            {sections.map((section, index) => (
-              <div key={index}>
-                <h2 className="text-2xl font-bold text-[#00FFFF] mb-6 flex items-center">
-                  <section.icon className="mr-2 h-6 w-6 text-[#00DDFF]" />
-                  {section.title}
-                </h2>
-
-                <div className="grid md:grid-cols-2 gap-6">
-                  {section.resources.map((resource, resourceIndex) => (
-                    <div
-                      key={resourceIndex}
-                      className="bg-gray-800 p-6 rounded-lg shadow-md border border-[#00FFFF] transition-transform transform hover:scale-105 hover:shadow-lg duration-300"
+              <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6">
+                {section.resources.map((resource, resourceIndex) => (
+                  <div
+                    key={resourceIndex}
+                    className="bg-gray-800 p-6 rounded-lg shadow-lg border border-[#00FFFF] transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
+                  >
+                    <h3 className="text-xl font-semibold mb-2 text-[#00FFFF]">{resource.title}</h3>
+                    <p className="text-[#00DDFF] mb-4">{resource.description}</p>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="border-[#00FFFF] text-[#00FFFF] hover:bg-[#00FFFF] hover:text-gray-900 transition-all duration-300"
+                      onClick={() => window.open(resource.link, "_blank")}
                     >
-                      <h3 className="text-xl font-semibold mb-2 text-[#00FFFF]">{resource.title}</h3>
-                      <p className="text-[#00DDFF] mb-4">{resource.description}</p>
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="border-[#00FFFF] text-[#00FFFF] hover:bg-[#00FFFF] hover:text-gray-900 transition-all duration-300"
-                        onClick={() => window.open(resource.link, "_blank")}
-                      >
-                        Access Resource
-                      </Button>
-                    </div>
-                  ))}
-                </div>
+                      Access Resource
+                    </Button>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
+        </div>
 
-          {/* ✅ WhatsApp Community Section */}
-          <div className="mt-12 bg-gray-800 p-8 rounded-xl flex flex-col items-center text-center border border-[#00FFFF]">
-            <MessageCircle className="h-10 w-10 text-[#00FFFF] mb-4" />
-            <h2 className="text-2xl font-bold text-[#00FFFF] mb-2">Need More Help?</h2>
-            <p className="text-[#00DDFF] mb-6 max-w-lg">
-              Join our WhatsApp community to discuss blockchain, ask questions, and stay updated on upcoming events.
-            </p>
-            <a
-              href="https://chat.whatsapp.com/Gu3mNGFNeS6FL30eeDmccf" // ✅ Replace with your actual WhatsApp group link
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button size="lg" className="bg-[#00FFFF] text-gray-900 hover:bg-[#00DDFF]">
-                Join WhatsApp Community
-              </Button>
-            </a>
-          </div>
+        {/* ✅ WhatsApp Community Section */}
+        <div className="mt-16 bg-gray-800 p-8 rounded-xl flex flex-col items-center text-center border border-[#00FFFF] shadow-lg transition-all duration-300 hover:scale-105">
+          <MessageCircle className="h-12 w-12 text-[#00FFFF] mb-4" />
+          <h2 className="text-2xl font-bold text-[#00FFFF] mb-2">Join Our Community</h2>
+          <p className="text-[#00DDFF] mb-6 max-w-lg">
+            Connect with blockchain enthusiasts, get your questions answered, and stay updated with the latest news.
+          </p>
+          <a
+            href="https://chat.whatsapp.com/Gu3mNGFNeS6FL30eeDmccf" // ✅ Replace with your actual WhatsApp group link
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button size="lg" className="bg-[#00FFFF] text-gray-900 hover:bg-[#00DDFF] shadow-md">
+              Join WhatsApp Community
+            </Button>
+          </a>
         </div>
       </div>
     </div>

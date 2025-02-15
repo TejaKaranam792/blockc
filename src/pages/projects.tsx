@@ -15,24 +15,28 @@ export function Projects() {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-[#7DF9FF] flex flex-col items-center justify-center px-6 py-12">
-      <h1 className="text-4xl font-bold mb-10 text-center">🚀 Our Projects</h1>
+    <div className="min-h-screen bg-gray-900 text-[#7DF9FF] flex flex-col items-center px-6 py-12">
+      <h1 className="text-4xl font-bold mb-10 text-center">🚀 Our Blockchain Projects</h1>
 
-      <div className="grid md:grid-cols-2 gap-8 max-w-6xl w-full">
+      <p className="text-lg text-gray-300 mb-8 max-w-3xl text-center">
+        Explore our innovative blockchain projects designed to push the boundaries of decentralization.
+      </p>
+
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl w-full">
         {projects.map((project, index) => (
           <div
             key={index}
-            className="bg-gray-900 shadow-lg rounded-xl p-6 border border-gray-700 transition-transform transform hover:scale-105 hover:shadow-xl duration-300"
+            className="bg-gray-800 shadow-lg rounded-xl p-6 border border-[#7DF9FF] transition-transform transform hover:scale-105 hover:shadow-xl duration-300 flex flex-col"
           >
             <h2 className="text-2xl font-semibold text-[#7DF9FF] mb-3">{project.title}</h2>
-            <p className="text-gray-300 leading-relaxed">{project.description}</p>
+            <p className="text-gray-300 leading-relaxed flex-grow">{project.description}</p>
             <a
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#7DF9FF] hover:text-blue-400 hover:underline mt-4 inline-block font-medium"
+              className="mt-4 inline-block text-[#7DF9FF] hover:text-blue-400 hover:underline font-medium"
             >
-              View on GitHub →
+              🔗 View on GitHub →
             </a>
           </div>
         ))}
